@@ -7,6 +7,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 
 use Geekimo\Bundle\RethinkDBBundle\DependencyInjection\Configuration;
+use Geekimo\Bundle\RethinkDBBundle\Services\RethinDBFactory;
 
 class RethinkDBExtension extends Extension
 {
@@ -15,6 +16,7 @@ class RethinkDBExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        $container->register('rethinkdb.factory', RethinkDBFactory::class);
         dump($config);
     }
 }
