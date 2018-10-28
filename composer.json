@@ -17,8 +17,7 @@
     },
     "require": {
         "php": ">=5.3.0",
-        "geekimo/php-rql": "1.15.1",
-        "phpunit/phpunit": "4.4"
+        "geekimo/php-rql": "2.3.*"
     },
     "autoload": {
         "psr-4": {
