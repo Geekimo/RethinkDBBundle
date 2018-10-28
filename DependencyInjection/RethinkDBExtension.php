@@ -17,6 +17,5 @@ class RethinkDBExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         $container->register('rethinkdb.factory', RethinkDBFactory::class);
-        var_dump($config);die;
     }
 }
