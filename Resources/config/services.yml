@@ -1,0 +1,3 @@
+services:
+  rethinkdb.connection
+    class: Geekimo\Bundle\RethinkDBBundle\Services\RethinkDBFactory
