@@ -5,6 +5,7 @@ namespace Geekimo\Bundle\RethinkDBBundle\DependencyInjection;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\Config\FileLocator;
 
 use Geekimo\Bundle\RethinkDBBundle\DependencyInjection\Configuration;
 use Geekimo\Bundle\RethinkDBBundle\Services\RethinDBFactory;
@@ -15,7 +16,12 @@ class RethinkDBExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $loader = new YamlFileLoader(
+            $container,
+            new FileLocator(__DIR__.'/../Resources/config')
+        );
+        $loader->load('services.yml');
 
-        $container->register('rethinkdb.factory', RethinkDBFactory::class);
+        //$container->register('rethinkdb.factory', RethinkDBFactory::class);
     }
 }

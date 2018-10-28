@@ -1,9 +1,0 @@
-{
-    "bundles": {
-        "Geekimo\\Bundle\\RethinkDBBundle\\RethinkDBBundle": ["all"]
-    },
-    "copy-from-recipe": {
-        "Resources/config/": "%CONFIG_DIR%/"
-    },
-    "aliases": ["rethinkdb", "rdb"]
-}
