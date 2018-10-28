@@ -22,8 +22,6 @@ class RethinkDBExtension extends Extension
         );
         $loader->load('services.yml');
 
-        dump($config);
-
-        //$container->setParameter('rethink_db', $config['rethink_db']);
+        $container->setParameter('rethink_db', $config);
     }
 }
