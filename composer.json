@@ -1,0 +1,28 @@
+{
+    "name":         "geekimo/rethinkdb-bundle",
+    "type":         "symfony-bundle",
+    "description":  "Symfony4 Bundle for RethinkDB",
+    "keywords":     ["rethinkdb", "events", "analytics", "symfony", "bundle" ],
+    "homepage":     "https://github.com/geekimo/RethinkDBBundle",
+    "license":      "MIT",
+    "authors": [
+        {
+            "name":     "Morgan Abraham",
+            "email":    "contact@geekimo.me",
+            "role":     "developer"
+        }
+    ],
+    "support": {
+        "email": "contact@geekimo.me"
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "geekimo/php-rql": "1.15.1",
+        "phpunit/phpunit": "4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Geekimo\\Bundle\\RethinkDBBundle\\": ""
+        }
+    }
+}
