@@ -2,10 +2,14 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle\Services;
 
-class RethinkDBFactory {
+use r;
+
+class RethinkDBFactory
+{
     private $instance = null;
 
-    static public function getConnection() {
-        
+    static public function getConnection($parameters) : r\Connection
+    {
+
     }
 }

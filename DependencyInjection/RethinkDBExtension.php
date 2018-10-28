@@ -21,7 +21,5 @@ class RethinkDBExtension extends Extension
             new FileLocator(__DIR__.'/../Resources/config')
         );
         $loader->load('services.yml');
-
-        //$container->register('rethinkdb.factory', RethinkDBFactory::class);
     }
 }
