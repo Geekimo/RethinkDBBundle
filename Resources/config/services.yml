@@ -1,5 +1,5 @@
 services:
-  rethinkdb.connection:
+  Geekimo\Bundle\RethinkDBBundle\Services\RethinkDB:
     public: true
     factory:
       class: [Geekimo\Bundle\RethinkDBBundle\Services\RethinkDBFactory, getConnection]
