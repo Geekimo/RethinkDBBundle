@@ -1,6 +1,0 @@
-rethinkdb:
-  hostname: '127.0.0.1'
-  port: 28015
-  database: 'rethinkdb'
-  apiKey: null
-  timeout: 30
