@@ -2,4 +2,4 @@ services:
   Geekimo\Bundle\RethinkDBBundle\Services\RethinkDB:
     public: true
     factory: [Geekimo\Bundle\RethinkDBBundle\Services\RethinkDBFactory, getConnection]
-    alias: 'rethinkdb.connection'
+    name: 'rethinkdb.connection'
