@@ -1,5 +1,5 @@
 {
-    "name":         "geekimo/rethinkdb-bundle",
+    "name":         "geekimo/php-rethinkdb-bundle",
     "type":         "symfony-bundle",
     "description":  "Symfony4 Bundle for RethinkDB",
     "keywords":     ["rethinkdb", "events", "analytics", "symfony", "bundle" ],
