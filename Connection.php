@@ -50,4 +50,4 @@ class Connection {
     }
 }
 
-class DatabaseConnectionException extends Exception {}
+class DatabaseConnectionException extends \Exception {}
