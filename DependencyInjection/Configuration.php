@@ -9,7 +9,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('rethinkdb');
+        $rootNode    = $treeBuilder->root('rethink_db');
 
         $rootNode
             ->children()
