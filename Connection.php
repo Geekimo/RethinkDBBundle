@@ -10,10 +10,6 @@ class Connection {
     public function __construct($parameters)
     {
         $this->connection = r\connect($parameters['hostname'], $parameters['port'], $parameters['database'], $parameters['apiKey'], $parameters['timeout']);
-
-        if($this->connection->connect_errno) {
-            throw new DatabaseConnectionException(sprintf('Cannot connect to database: (%s) %s', $this->connection->connect_errno, $this->connection->connect_error));
-        }
     }
 
     public function run(r\Query $query, $deepToArray = false)
