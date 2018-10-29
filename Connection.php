@@ -9,7 +9,7 @@ class Connection {
 
     public function __construct($parameters)
     {
-        $this->connection = r\connect($conf);
+        $this->connection = r\connect($parameters);
 
         if($this->instance->connect_errno) {
             throw new DatabaseConnectionException(sprintf('Cannot connect to database: (%s) %s', $this->instance->connect_errno, $this->instance->connect_error));
