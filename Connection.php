@@ -11,8 +11,8 @@ class Connection {
     {
         $this->connection = r\connect($parameters['hostname'], $parameters['port'], $parameters['database'], $parameters['apiKey'], $parameters['timeout']);
 
-        if($this->instance->connect_errno) {
-            throw new DatabaseConnectionException(sprintf('Cannot connect to database: (%s) %s', $this->instance->connect_errno, $this->instance->connect_error));
+        if($this->connection->connect_errno) {
+            throw new DatabaseConnectionException(sprintf('Cannot connect to database: (%s) %s', $this->connection->connect_errno, $this->connection->connect_error));
         }
     }
 
