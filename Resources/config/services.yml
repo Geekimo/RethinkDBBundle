@@ -1,7 +1,7 @@
 services:
-  rethinkdb.connection:
+  Geekimo\Bundle\RethinkDBBundle\Connection:
     public: true
     factory: [Geekimo\Bundle\RethinkDBBundle\Services\RethinkDBFactory, getConnection]
-    class: r\Connection
+    class: Geekimo\Bundle\RethinkDBBundle\Connection
     arguments:
       $parameters: '%rethink_db%'
