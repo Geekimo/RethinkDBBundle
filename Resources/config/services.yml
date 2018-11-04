@@ -2,7 +2,7 @@ services:
   rethinkdb.connection:
     public: true
     factory: [Geekimo\Bundle\RethinkDBBundle\Services\Factory, getConnection]
-    class: Geekimo\Bundle\RethinkDBBundle\Connection
+    class: Geekimo\Bundle\RethinkDBBundle\Services\Connection
     arguments:
       $parameters: '%rethink_db%'
   rethinkdb.repository:

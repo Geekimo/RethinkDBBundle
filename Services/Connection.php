@@ -1,6 +1,6 @@
 <?php
 
-namespace Geekimo\Bundle\RethinkDBBundle;
+namespace Geekimo\Bundle\RethinkDBBundle\Services;
 
 use r;
 
