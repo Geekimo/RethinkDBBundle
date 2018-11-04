@@ -1,6 +1,6 @@
 <?php
 
-namespace Geekimo\Bundle\RethinkDBBundle\Services;
+namespace Geekimo\Bundle\RethinkDBBundle\Service;
 
 use Geekimo\Bundle\RethinkDBBundle\Exception\RepositoryErrorException;
 use Geekimo\Bundle\RethinkDBBundle\ModelBase;

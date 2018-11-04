@@ -2,7 +2,7 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle;
 
-use Geekimo\Bundle\RethinkDBBundle\Connection;
+use Geekimo\Bundle\RethinkDBBundle\Service\Connection;
 
 class ModelBase
 {

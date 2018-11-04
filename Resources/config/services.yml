@@ -1,18 +1,18 @@
 services:
-  Geekimo\Bundle\RethinkDBBundle\Services\Connection:
+  Geekimo\Bundle\RethinkDBBundle\Service\Connection:
     public: true
-    factory: [Geekimo\Bundle\RethinkDBBundle\Services\Factory, getConnection]
-    class: Geekimo\Bundle\RethinkDBBundle\Services\Connection
+    factory: [Geekimo\Bundle\RethinkDBBundle\Service\Factory, getConnection]
+    class: Geekimo\Bundle\RethinkDBBundle\Service\Connection
     arguments:
       $parameters: '%rethink_db%'
-  Geekimo\Bundle\RethinkDBBundle\Services\Repository:
+  Geekimo\Bundle\RethinkDBBundle\Service\Repository:
     public: true
-    class: Geekimo\Bundle\RethinkDBBundle\Services\Repository
+    class: Geekimo\Bundle\RethinkDBBundle\Service\Repository
     arguments:
       $connection: '@rethinkdb.connection'
   rethinkdb.connection:
     public: true
-    alias: Geekimo\Bundle\RethinkDBBundle\Services\Connection
+    alias: Geekimo\Bundle\RethinkDBBundle\Service\Connection
   rethinkdb.repository:
     public: true
-    alias: Geekimo\Bundle\RethinkDBBundle\Services\Repository
+    alias: Geekimo\Bundle\RethinkDBBundle\Service\Repository

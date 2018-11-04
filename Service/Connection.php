@@ -1,6 +1,6 @@
 <?php
 
-namespace Geekimo\Bundle\RethinkDBBundle\Services;
+namespace Geekimo\Bundle\RethinkDBBundle\Service;
 
 use r;
 
@@ -45,5 +45,3 @@ class Connection {
         return $value;
     }
 }
-
-class DatabaseConnectionException extends \Exception {}
