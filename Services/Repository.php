@@ -2,9 +2,9 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle\Services;
 
-use Geekimo\Bundle\RethinkDBBundle\Connection;
 use Geekimo\Bundle\RethinkDBBundle\Exception\RepositoryErrorException;
 use Geekimo\Bundle\RethinkDBBundle\ModelBase;
+use Geekimo\Bundle\RethinkDBBundle\Service\Connection;
 
 class Repository
 {
