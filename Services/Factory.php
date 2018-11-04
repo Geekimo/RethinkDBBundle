@@ -2,7 +2,7 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle\Services;
 
-use Geekimo\Bundle\RethinkDBBundle\Connection;
+use Geekimo\Bundle\RethinkDBBundle\Services\Connection;
 
 class Factory
 {
