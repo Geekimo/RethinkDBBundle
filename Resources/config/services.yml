@@ -9,6 +9,8 @@ services:
     public: true
     class: Geekimo\Bundle\RethinkDBBundle\Services\Repository
   rethinkdb.connection:
+    public: true
     alias: Geekimo\Bundle\RethinkDBBundle\Services\Connection
   rethinkdb.repository:
+    public: true
     alias: Geekimo\Bundle\RethinkDBBundle\Services\Repository
