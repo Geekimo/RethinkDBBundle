@@ -22,7 +22,7 @@ class Repository
             throw new RepositoryErrorException(sprintf('Model "%s" must extend "%s"', get_class($model), ModelBase::class));
         }
 
-        $model->setConnection($connection);
+        $model->setConnection($this->connection);
         return $model;
     }
 }
