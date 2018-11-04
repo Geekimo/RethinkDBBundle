@@ -4,7 +4,7 @@ namespace Geekimo\Bundle\RethinkDBBundle\Services;
 
 use Geekimo\Bundle\RethinkDBBundle\Connection;
 
-class RethinkDBFactory
+class Factory
 {
     static public function getConnection($parameters) : Connection
     {
