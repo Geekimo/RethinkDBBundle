@@ -3,6 +3,7 @@
 namespace Geekimo\Bundle\RethinkDBBundle\Services;
 
 use Geekimo\Bundle\RethinkDBBundle\Connection;
+use Geekimo\Bundle\RethinkDBBundle\Exception\RepositoryErrorException;
 use Geekimo\Bundle\RethinkDBBundle\ModelBase;
 
 class Repository
@@ -14,8 +15,13 @@ class Repository
         $this->connection = $connection;
     }
 
-    public function get(ModelBase $model) {
+    public function get(string $model) {
         $model = new $model;
+
+        if(!($model instanceof ModelBase)) {
+            throw new RepositoryErrorException(sprintf('Model "%s" must extend "%s"', get_class($model), ModelBase::class));
+        }
+
         $model->setConnection($connection);
         return $model;
     }
