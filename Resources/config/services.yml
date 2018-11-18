@@ -10,6 +10,7 @@ services:
     class: Geekimo\Bundle\RethinkDBBundle\Service\Repository
     arguments:
       $connection: '@rethinkdb.connection'
+      $container: '@service_container'
   rethinkdb.connection:
     public: true
     alias: Geekimo\Bundle\RethinkDBBundle\Service\Connection
