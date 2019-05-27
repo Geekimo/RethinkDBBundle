@@ -16,7 +16,7 @@ class Connection {
     {
         $query = $query->run($this->connection);
 
-        if($deepToArray) {
+        if($deepToArray && !is_null($query)) {
             if(is_array($query)) {
                 $query = $this->deepToArray($query);
             } elseif(get_class($query) == 'ArrayObject') {
