@@ -3,6 +3,7 @@
 namespace Geekimo\Bundle\RethinkDBBundle\Service;
 
 use r;
+use Geekimo\Bundle\RethinkDBBundle\Exception\QueryException;
 
 class Connection {
     private $connection = null;
@@ -15,6 +16,10 @@ class Connection {
     public function run(r\Query $query, $deepToArray = false)
     {
         $query = $query->run($this->connection);
+
+        if (isset($query['errors']) && $query['errors'] > 0) {
+            throw new QueryException($query['first_error']);
+        }
 
         if($deepToArray) {
             if(is_array($query)) {
