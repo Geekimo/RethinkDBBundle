@@ -2,6 +2,6 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle\Exception;
 
-class RepositoryErrorException extends \RuntimeExeption
+class RepositoryErrorException extends \RuntimeException
 {
 }

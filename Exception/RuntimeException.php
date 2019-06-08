@@ -2,6 +2,6 @@
 
 namespace Geekimo\Bundle\RethinDBBundle\Exception;
 
-class RuntimeException extends \RuntimeExeption implements ExceptionInterface
+class RuntimeException extends \RuntimeException implements ExceptionInterface
 {
 }

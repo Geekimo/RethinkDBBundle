@@ -17,8 +17,8 @@ class Connection {
     {
         $query = $query->run($this->connection);
 
-        if (isset($query['errors']) && $query['errors'] > 0) {
-            throw new QueryException($query['first_error']);
+        if (!is_array($query) && get_class($query) == 'ArrayObject' && $query->offsetExists('errors') && $query->offsetGet('errors') > 0) {
+            throw new QueryException($query->offsetGet('first_error'));
         }
 
         if($deepToArray && !is_null($query)) {
