@@ -21,7 +21,7 @@ class Connection {
             throw new QueryException($query['first_error']);
         }
 
-        if($deepToArray) {
+        if($deepToArray && !is_null($query)) {
             if(is_array($query)) {
                 $query = $this->deepToArray($query);
             } elseif(get_class($query) == 'ArrayObject') {
