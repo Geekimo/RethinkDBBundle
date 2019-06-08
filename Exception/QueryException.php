@@ -1,6 +1,6 @@
 <?php
 
-namespace Geekimo\Bundle\RethinDBBundle\Exception;
+namespace Geekimo\Bundle\RethinkDBBundle\Exception;
 
 class QueryException extends \RuntimeException implements ExceptionInterface
 {
