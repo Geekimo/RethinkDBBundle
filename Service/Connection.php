@@ -17,7 +17,7 @@ class Connection {
     {
         $query = $query->run($this->connection);
 
-        if (!is_array($query) && get_class($query) == 'ArrayObject' && $query->offsetExists('errors') && $query->offsetGet('errors') > 0) {
+        if (is_object($query) && get_class($query) == 'ArrayObject' && $query->offsetExists('errors') && $query->offsetGet('errors') > 0) {
             throw new QueryException($query->offsetGet('first_error'));
         }
 
