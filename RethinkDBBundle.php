@@ -1,9 +1,8 @@
 <?php
 namespace Geekimo\Bundle\RethinkDBBundle;
 
-use Symfony\Component\HttpKernel\Bundle\Bundle;
+use Symfony\Component\HttpKernel\Bundle\AbstractBundle;
 
-class RethinkDBBundle extends Bundle
+class RethinkDBBundle extends AbstractBundle
 {
-
 }

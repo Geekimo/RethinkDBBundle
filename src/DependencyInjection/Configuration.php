@@ -6,10 +6,10 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 
 class Configuration implements ConfigurationInterface
 {
-    public function getConfigTreeBuilder()
+    public function getConfigTreeBuilder(): TreeBuilder
     {
-        $treeBuilder = new TreeBuilder();
-        $rootNode    = $treeBuilder->root('rethink_db');
+        $treeBuilder = new TreeBuilder('rethink_db');
+        $rootNode = $treeBuilder->getRootNode();
 
         $rootNode
             ->children()

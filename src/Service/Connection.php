@@ -6,14 +6,20 @@ use r;
 use Geekimo\Bundle\RethinkDBBundle\Exception\QueryException;
 
 class Connection {
-    private $connection = null;
+    private r\Connection $connection;
 
     public function __construct($parameters)
     {
-        $this->connection = r\connect($parameters['hostname'], $parameters['port'], $parameters['database'], $parameters['apiKey'], $parameters['timeout']);
+        $this->connection = r\connect(
+            $parameters['hostname'],
+            $parameters['port'],
+            $parameters['database'],
+            $parameters['apiKey'],
+            $parameters['timeout'],
+        );
     }
 
-    public function run(r\Query $query, $deepToArray = false)
+    public function run(r\Query $query, $deepToArray = false): r\Query
     {
         $query = $query->run($this->connection);
 
@@ -34,9 +40,9 @@ class Connection {
         return $query;
     }
 
-    private function deepToArray($value)
+    private function deepToArray($value): mixed
     {
-        if(is_object($value) && get_class($value) == 'ArrayObject') {
+        if($value instanceof \ArrayObject) {
             $value = $value->getArrayCopy();
             foreach($value as $k => $v) {
                 $value[$k] = $this->deepToArray($v);
@@ -46,7 +52,7 @@ class Connection {
                 $value[$k] = $this->deepToArray($v);
             }
         }
-        
+
         return $value;
     }
 }
