@@ -8,14 +8,19 @@ use r;
 final readonly class Connection {
     private r\Connection $connection;
 
-    public function __construct($parameters)
-    {
+    public function __construct(
+        string $hostname,
+        int $port,
+        string $database,
+        string|null $apiKey = null,
+        int $timeout = 30
+    ) {
         $this->connection = r\connect(
-            $parameters['hostname'],
-            $parameters['port'],
-            $parameters['database'],
-            $parameters['apiKey'],
-            $parameters['timeout'],
+            $hostname,
+            $port,
+            $database,
+            $apiKey,
+            $timeout,
         );
     }
 
