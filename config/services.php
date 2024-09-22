@@ -31,5 +31,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->set(Repository::class)
         ->class(Repository::class)
         ->arg('$connection', service(Connection::class))
-        ->arg('$container', service(ContainerInterface::class));
+        ->arg('$container', service('service_container'));
 };
