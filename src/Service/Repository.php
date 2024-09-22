@@ -14,6 +14,12 @@ final readonly class Repository
     ) {
     }
 
+    /**
+     * @template T of ModelBase
+     * @param class-string<T> $model
+     *
+     * @return T
+     */
     public function get(string $model): ModelBase
     {
         $model = new $model;
