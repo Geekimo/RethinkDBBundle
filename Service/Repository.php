@@ -6,7 +6,7 @@ use Geekimo\Bundle\RethinkDBBundle\Entity\ModelBase;
 use Geekimo\Bundle\RethinkDBBundle\Exception\RepositoryErrorException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-class Repository
+final readonly class Repository
 {
     public function __construct(
         private Connection $connection,
@@ -14,7 +14,8 @@ class Repository
     ) {
     }
 
-    public function get(string $model) {
+    public function get(string $model): ModelBase
+    {
         $model = new $model;
 
         if(!($model instanceof ModelBase)) {
@@ -25,7 +26,6 @@ class Repository
             ));
         }
 
-        // some DI
         $model->setConnection($this->connection);
         $model->setContainer($this->container);
 

@@ -5,7 +5,7 @@ namespace Geekimo\Bundle\RethinkDBBundle\Service;
 use Geekimo\Bundle\RethinkDBBundle\Exception\QueryException;
 use r;
 
-class Connection {
+final readonly class Connection {
     private r\Connection $connection;
 
     public function __construct($parameters)

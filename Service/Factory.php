@@ -2,7 +2,7 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle\Service;
 
-class Factory
+final readonly class Factory
 {
     static public function getConnection($parameters) : Connection
     {
