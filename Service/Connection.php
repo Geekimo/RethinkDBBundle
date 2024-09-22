@@ -2,8 +2,8 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle\Service;
 
-use r;
 use Geekimo\Bundle\RethinkDBBundle\Exception\QueryException;
+use r;
 
 class Connection {
     private r\Connection $connection;

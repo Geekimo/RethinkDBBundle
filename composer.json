@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Geekimo\\Bundle\\RethinkDBBundle\\": "src/"
+            "Geekimo\\Bundle\\RethinkDBBundle\\": ""
         }
     }
 }

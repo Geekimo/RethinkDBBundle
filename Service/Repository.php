@@ -2,10 +2,9 @@
 
 namespace Geekimo\Bundle\RethinkDBBundle\Service;
 
-use Symfony\Component\DependencyInjection\ContainerInterface;
-
+use Geekimo\Bundle\RethinkDBBundle\Entity\ModelBase;
 use Geekimo\Bundle\RethinkDBBundle\Exception\RepositoryErrorException;
-use Geekimo\Bundle\RethinkDBBundle\ModelBase;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class Repository
 {
