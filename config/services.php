@@ -27,14 +27,4 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             '$apiKey' => param('rethink_db.api_key'),
             '$timeout' => param('rethink_db.timeout'),
         ]);
-
-    $services
-        ->set(Repository::class)
-        ->class(Repository::class)
-        ->arg('$connection', service(Connection::class))
-        ->arg('$container', service('service_container'));
-
-    $services
-        ->instanceof(ModelBase::class)
-        ->;
 };
