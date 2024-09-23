@@ -24,25 +24,45 @@ final readonly class Connection {
         );
     }
 
-    public function run(r\Query $query, $deepToArray = false): r\Query
+    private function throwOnQueryError(mixed $result): void
     {
-        $query = $query->run($this->connection);
+        if (
+            $result instanceof \ArrayObject
+            && $result->offsetExists('errors')
+            && $result->offsetGet('errors') > 0
+        ) {
+            throw new QueryException($result->offsetGet('first_error'));
+        }
+    }
 
-        if (is_object($query) && get_class($query) == 'ArrayObject' && $query->offsetExists('errors') && $query->offsetGet('errors') > 0) {
-            throw new QueryException($query->offsetGet('first_error'));
+    public function getQueryResultAsArray(r\Query $query): array
+    {
+        $result = $query->run($this->connection);
+
+        $this->throwOnQueryError($query);
+
+        if(null === $result) {
+            return [];
         }
 
-        if($deepToArray && !is_null($query)) {
-            if(is_array($query)) {
-                $query = $this->deepToArray($query);
-            } elseif(get_class($query) == 'ArrayObject') {
-                $query = $this->deepToArray($query->getArrayCopy());
-            } elseif(method_exists($query, 'toArray')) {
-                $query = $this->deepToArray($query->toArray());
-            }
+        if(is_array($result)) {
+            return $this->deepToArray($result);
+        } elseif ($result instanceof \Traversable) {
+            return $this->deepToArray($result->getArrayCopy());
+        } elseif (method_exists($result, 'toArray')) {
+            return $this->deepToArray($result->toArray());
         }
 
-        return $query;
+        return (array) $result;
+    }
+
+    public function getQueryResult(r\Query $query): r\Query
+    {
+        $result = $query->run($this->connection);
+
+        $this->throwOnQueryError($result);
+
+        return $result;
     }
 
     private function deepToArray($value): mixed
