@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Geekimo\Bundle\RethinkDBBundle\Entity\ModelBase;
 use Geekimo\Bundle\RethinkDBBundle\Service\Connection;
 use Geekimo\Bundle\RethinkDBBundle\Service\Factory;
 use Geekimo\Bundle\RethinkDBBundle\Service\Repository;
@@ -32,4 +33,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->class(Repository::class)
         ->arg('$connection', service(Connection::class))
         ->arg('$container', service('service_container'));
+
+    $services
+        ->instanceof(ModelBase::class)
+        ->;
 };
