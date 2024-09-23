@@ -47,16 +47,16 @@ final readonly class Connection {
 
         if(is_array($result)) {
             return $this->deepToArray($result);
-        } elseif ($result instanceof \Traversable) {
+        } elseif ($result instanceof \ArrayObject) {
             return $this->deepToArray($result->getArrayCopy());
-        } elseif (method_exists($result, 'toArray')) {
+        } elseif ($result instanceof \Traversable || method_exists($result, 'toArray')) {
             return $this->deepToArray($result->toArray());
         }
 
         return (array) $result;
     }
 
-    public function getQueryResult(r\Query $query): r\Query
+    public function runQuery(r\Query $query): mixed
     {
         $result = $query->run($this->connection);
 
